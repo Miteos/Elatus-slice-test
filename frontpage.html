@@ -4,24 +4,49 @@
     <meta charset="utf-8">
     <title>Kupaonice</title>
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <script type="text/javascript" src="frontpage.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
 
 </head>
 <body>
-<p id="user-greeting"></p>
+
 <nav id="nav" class="navigation">
     <ul class="left">
         <li>Početna</li>
         <li>Proizvodi</li>
         <li>Katalozi</li>
     </ul>
-    <div></div>
     <ul class="right">
         <li>Saloni</li>
         <li>O nama</li>
         <li>Dogovori sastanak</li>
     </ul>
+    <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+        <i class="fa fa-bars"></i>
+    </a>
+    <div id="myLinks">
+        <a href="#news">Početna</a>
+        <a href="#contact">Proizvodi</a>
+        <a href="#about">Katalozi</a>
+        <a href="#news">Saloni</a>
+        <a href="#contact">O nama</a>
+        <a href="#about">Dogovori sastanak</a>
+    </div>
 </nav>
+    <script>
+        function myFunction() {
+            let navbar = document.getElementById("nav");
+            const x = document.getElementById("myLinks");
+            if (x.style.display === "block") {
+                x.style.display = "none";
+                navbar.classList.remove("active-mobile")
+            } else {
+                x.style.display = "block";
+                navbar.classList.add("active-mobile")
+            }
+        }
+    </script>
 <main>
 <div class="hero">
 <div class="overlay">
@@ -79,7 +104,7 @@
                 <p>TUŠ KADE</p>
             </div>
         </div>
-        <button class="white-button">Pogledaj sve</button>
+        <button class="white-button" style="margin-bottom:82px">Pogledaj sve</button>
     </div>
 </section>
     <section class="collections">
@@ -163,9 +188,9 @@
             </div>
             <div class="contact-inner">
                 <p>Lorem ipsum, or lipsum as it is sometimes known.</p>
-                <div class="flex-row">
-                    <label>
-                        <input class="inp" style="margin-right: 11px" placeholder="E-mail"/>
+                <div class="flex-row justify-center mobile-form">
+                    <label class="input-label">
+                        <input class="inp"  placeholder="E-mail"/>
                     </label>
                     <button class="black-button">Prijavi me</button>
                 </div>
